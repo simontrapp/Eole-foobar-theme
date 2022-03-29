@@ -194,8 +194,6 @@ function build_images(){
 
 	images.track_infos_img = gdi.Image(theme_img_path + "\\icons\\"+colors.icons_folder+"\\track_infos_icon.png");
 
-	images.artist_bio_img = gdi.Image(theme_img_path + "\\icons\\"+colors.icons_folder+"\\artist_bio_icon.png");
-
 	images.playlist_img = gdi.Image(theme_img_path + "\\icons\\"+colors.icons_folder+"\\playlist_icon.png");
 
 	images.visualization_img = gdi.Image(theme_img_path + "\\icons\\"+colors.icons_folder+"\\nowplaying_icon.png");
@@ -460,10 +458,6 @@ function build_buttons(){
 		buttons.Playlists.H_img = images.playlist_img;
 		buttons.Playlists.D_img = buttons.Playlists.H_img;
 
-		buttons.Artist_Bio.H_img = images.artist_bio_img;
-		buttons.Artist_Bio.N_img = images.artist_bio_img;
-		buttons.Artist_Bio.D_img = buttons.Artist_Bio.H_img;
-
 		buttons.Visualization.H_img = images.visualization_img;
 		buttons.Visualization.N_img = images.visualization_img;
 		buttons.Visualization.D_img = buttons.Visualization.H_img;
@@ -525,10 +519,6 @@ function build_buttons(){
 				main_panel_state.setValue(1);
 				get_colors();g_searchbox.adapt_look_to_layout();
 			}, false,false,images.playlist_img,images.playlist_img,1, false, false, true),
-			Artist_Bio: new JSButton(btn.left_m+btn.width+btn.width+btn.margin*2, btn.top_m, btn.width, btn.height, "Now playing", "Now playing", "", function () {
-				main_panel_state.setValue(2);
-				get_colors();g_searchbox.adapt_look_to_layout();
-			}, false,false,images.artist_bio_img,images.artist_bio_img,2, false, false, true),
 			Visualization: new JSButton(btn.left_m+btn.width+btn.width+btn.width+btn.margin*3, btn.top_m, btn.width, btn.height, "Visualization", "Visualization", "", function () {
 				main_panel_state.setValue(3);
 				get_colors();g_searchbox.adapt_look_to_layout();
@@ -596,7 +586,7 @@ function build_buttons(){
 		topleft_btns.setPadding([0,7,0,2]);
 
 		main_panel_btns = new JSButtonGroup("top-left", btn.left_m, btn.top_m, 'main_panel_btns', true);
-		main_panel_btns.addButtons([buttons.Library,buttons.Playlists,buttons.Artist_Bio,buttons.Visualization], [0,btn.margin+2,0,0]);
+		main_panel_btns.addButtons([buttons.Library,buttons.Playlists,buttons.Visualization], [0,btn.margin+2,0,0]);
 		main_panel_btns.setPadding(btn.padding);
 
 		window_btns = new JSButtonGroup("top-right", 0, 0, 'window_btns', false);
@@ -608,7 +598,7 @@ function build_buttons(){
 		compact_btns = new JSButtonGroup("top-left", 0, -1, 'compact_btns', true);
 		compact_btns.addButtons([buttons.Settings,buttons.NowPlaying,buttons.RightSidebar,buttons.Lightswitch,buttons.Fullscreen,buttons.ShowSearch], [0,0,0,0]);
 		compact_btns.addButtons([buttons.Library], [0,0,0,btn.margin+5]);
-		compact_btns.addButtons([buttons.Playlists,buttons.Artist_Bio,buttons.Visualization], [0,0,0,btn.margin]);
+		compact_btns.addButtons([buttons.Playlists,buttons.Visualization], [0,0,0,btn.margin]);
 	}
 }
 function toggleSearch(new_search_state){
@@ -809,7 +799,6 @@ function drawAllButtons(gr) {
 function set_main_btns_visibility(){
 	if((compact_titlebar.isActive() && !g_searchbox.hide) || layout_state.isEqual(1)) {
 		buttons.Playlists.setVisibility(false);
-		buttons.Artist_Bio.setVisibility(false);
 		buttons.Library.setVisibility(false);
 		buttons.Visualization.setVisibility(false);
 		return;
@@ -822,8 +811,6 @@ function set_main_btns_visibility(){
 		if(ww-cSearchBox.marginRight-searchbox_width<btn.left_m+btn.width*4+btn.padding*3) buttons.Visualization.setVisibility(false);
 		else buttons.Visualization.setVisibility(true);
 	}
-	if(ww-cSearchBox.marginRight-searchbox_width<btn.left_m+btn.width*3+btn.padding*2) buttons.Artist_Bio.setVisibility(false);
-	else buttons.Artist_Bio.setVisibility(true);
 	if(ww-cSearchBox.marginRight-searchbox_width<btn.left_m+btn.width*2+btn.padding*1) buttons.Playlists.setVisibility(false);
 	else buttons.Playlists.setVisibility(true);
 	buttons.Library.setVisibility(true);
@@ -1003,7 +990,6 @@ function on_mouse_rbtn_up(x, y){
 		if(layout_state.isEqual(0)) {
 			_menu.AppendMenuItem(MF_STRING, 1, "Library");
 			_menu.AppendMenuItem(MF_STRING, 2, "Playlists");
-			_menu.AppendMenuItem(MF_STRING, 3, "Now playing");
 			if(properties.show_visualization) _menu.AppendMenuItem(MF_STRING, 4, "Visualization");
 			_menu.CheckMenuRadioItem(1, 4, (parseInt(main_panel_state.value)+1));
 			_menu.AppendMenuSeparator();
