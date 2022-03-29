@@ -16,7 +16,7 @@ I removed all network-related stuff (lyrics/biography downloads) and visualizati
 
 0. Close foobar.
 
-1. Download this [github repository](zipball/master/) and copy everything into your foobar profile directory (so the 3 folders: user-components, themes, and plugins).
+1. Download this github repository and copy everything into your foobar profile directory (so the 2 folders: user-components and themes).
    - STANDARD foobar2000 installation: your foobar profile directory is in here: %AppData%/foobar2000
    - PORTABLE foobar2000 installation: your foobar profile directory is in a folder named "profile" inside your installation directory.
 
