@@ -1,6 +1,6 @@
 var properties = {
 	panelName: 'WSHlibrary_tree',
-    darklayout: window.GetProperty("_DISPLAY: Dark layout", false),
+    darklayout: window.GetProperty("_DISPLAY: Dark layout", true),
     showwallpaper: window.GetProperty("_DISPLAY: Show Wallpaper", false),
     wallpaperblurred: window.GetProperty("_DISPLAY: Wallpaper Blurred", true),
     wallpaperblurvalue: window.GetProperty("_DISPLAY: Wallpaper Blur Value", 1.05),

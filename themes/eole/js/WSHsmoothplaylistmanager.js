@@ -15,7 +15,7 @@ var properties = {
     showFilterBox: window.GetProperty("PROPERTY: Enable Playlist Filterbox in Top Bar", true),
     drawUpAndDownScrollbar: window.GetProperty("PROPERTY: Draw Up and Down Scrollbar Buttons", false),
     drawItemsCounter: window.GetProperty("PROPERTY: Show numbers of items", true),
-	darklayout: window.GetProperty("_DISPLAY: Dark layout", false),
+	darklayout: window.GetProperty("_DISPLAY: Dark layout", true),
 	showwallpaper: window.GetProperty("_DISPLAY: Show Wallpaper", false),
     wallpaperblurred: window.GetProperty("_DISPLAY: Wallpaper Blurred", true),
     wallpaperblurvalue: window.GetProperty("_DISPLAY: Wallpaper Blur Value", 1.05),

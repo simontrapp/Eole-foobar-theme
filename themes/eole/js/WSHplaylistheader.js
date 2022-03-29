@@ -1,6 +1,6 @@
 var properties = {
 	panelName: 'WSHplaylistheader',
-	darklayout: window.GetProperty("_DISPLAY: Dark layout", false),
+	darklayout: window.GetProperty("_DISPLAY: Dark layout", true),
 	displayToggleBtns: window.GetProperty("_DISPLAY: Toggle buttons", true),
 	savedFilterState: window.GetProperty("_PROPERTY: Saved filter state", -1),
     filtred_playlist_idx: window.GetProperty("_PROPERTY: filtred playlist idx", -1),		

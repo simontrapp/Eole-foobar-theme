@@ -146,7 +146,7 @@ var properties = {
 	panelFontAdjustement: -1,
     enableDiskCache: window.GetProperty("COVER Disk Cache", true),
 	deleteSpecificImageCache : window.GetProperty("COVER cachekey of covers to delete on next startup", ""),
-	darklayout: window.GetProperty("_DISPLAY: Dark layout", false),
+	darklayout: window.GetProperty("_DISPLAY: Dark layout", true),
 	showwallpaper: window.GetProperty("_DISPLAY: Show Wallpaper", false),
     wallpaperblurred: window.GetProperty("_DISPLAY: Wallpaper Blurred", true),
 	displayToggleBtns: window.GetProperty("_DISPLAY: Toggle buttons", true),

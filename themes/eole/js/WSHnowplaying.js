@@ -10,7 +10,7 @@ var properties = {
     minimode_dark_theme: window.GetProperty("MINIMODE dark theme", true),
     library_dark_theme: window.GetProperty("LIBRARY dark theme", true),
     visualization_dark_theme: window.GetProperty("VISUALIZATION dark theme", true),
-    playlists_dark_theme: window.GetProperty("PLAYLISTS dark theme", false),
+    playlists_dark_theme: window.GetProperty("PLAYLISTS dark theme", true),
     bio_dark_theme: window.GetProperty("BIO dark theme", true),
     single_click_action: window.GetProperty("PROPERTY single_click_action", 0),
     dble_click_action: window.GetProperty("PROPERTY double click action", 0),
